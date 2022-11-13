@@ -1,0 +1,137 @@
+$type-color: (
+  "normal": #A8A878,
+  "fire": #F08030,
+  "water": #6890F0,
+  "grass": #78C850,
+  "electric": #F8D030,
+  "ice": #98D8D8,
+  "fighting": #C03028,
+  "poison": #A040A0,
+  "ground":#E0C068,
+  "flying":#A890F0,
+  "psychic":#F85888,
+  "bug":#A8B820,
+  "rock":#B8A038,
+  "ghost":#705898,
+  "dark":#705848,
+  "dragon":#7038F8,
+  "steel":#B8B8D0,
+  "fairy":#F0B6BC,
+);
+
+@each $type, $color in $type-color {
+  .#{$type}-pokemon {
+    background-color: $color;
+  }
+  pokemon-list > pokemon-item.#{$type}-pokemon {
+    box-shadow: 5px 10px 10px 3px #{$color}50;
+  }
+  pokemon-details.#{$type}-pokemon {
+    background-color: #{$color}A0;
+  }
+};
+
+$text-color: #F7F7F7;
+$color-white: #F7F7F7;
+$color-white-2: #E1E1E1;
+$color-white-3: #CFCFCF;
+$color-dark-4: #626262;
+$color-dark-2: #3B3B3B;
+$color-dark: #222222;
+$base-color:#121212;
+
+body {
+  color: $text-color;
+  background-color: $base-color;
+  & > header {
+    background-color: $color-dark-2;
+  }
+  .search-bar > {
+    input{
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $color-white-2;
+      background-color: transparent;
+      color: $color-white;
+    }
+    input::placeholder {
+      color: $color-white-3;
+    }
+    button {
+      background-color: $color-dark-2;
+      &:hover {
+        background-color: $color-white-3;
+      }
+    }
+  }
+  pokemon-details {
+    header {
+      box-shadow: none;
+    }
+    article {
+      &.pokemon-details-about-article {
+        .stat-name {
+          color: gray;
+        }
+        .fa-venus {
+          color: pink;
+        }
+        .fa-mars {
+          color: lightblue;
+        }
+      }
+      &.pokemon-details-basestat-article {
+        .stat-bar {
+          background-color: var(--col);
+        }
+      }
+    }
+    .pokemon-info {
+      background-color: $color-dark;
+      & > {
+        ul > {
+          li {
+            color: #{$text-color}80;
+            &:hover {
+              color: $text-color;
+            }
+            &::after {
+              border-bottom: 2px solid $color-white;
+            }
+          }
+          .active-details-btn {
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+  pokemon-list > div > button {
+    background-color: $color-dark-4;
+    &:hover {
+      background-color: $color-white-3;
+    }
+  }
+  footer {
+    background-color: $color-dark-2;
+  }
+  i {
+    color: $color-white;
+  }
+}
+
+ ::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-dark-4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $color-dark-2;
+} 

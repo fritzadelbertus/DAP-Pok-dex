@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import 'pokemon-list';
+@import 'pokemon-details';
+@import 'colors';
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Secular One', sans-serif;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.content-box {
+  @include flex-center;
+  flex-direction: column;
+}
+
+.type-tag {
+  font-size: 13px;
+  text-transform: capitalize;
+  border-radius: 10px;
+  padding: 0px 10px;
+  color: black;
+  background-color: white;
+  opacity: 60%;
+}
+
+.moves-tag {
+  @include flex-center;
+  font-size: 15px;
+  height: 30px;
+  text-transform: capitalize;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+
+header {
+  @include flex-center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 0 0 20px 20px;
+  padding: 10px 20px 0 20px;
+  height: 120px;
+  .pokedex-title {
+    height: 50px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .search-bar{
+    & > {
+      input{
+        width: 50vw;
+        max-width: 200px;
+        font-size: 18px;
+      }
+    }
+    button {
+      border-radius: 50%;
+      border: none;
+      width: 40px;
+      height: 40px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+footer {
+  @include flex-center;
+  justify-content: center;
+  margin-top: 0px;
+  height: 100px;
+  p {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  // For Tablets
+  pokemon-details {
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 600px;
+    & > {
+      .pokemon-info {
+        article {
+          margin: 20px 40px;
+          padding: 0;
+        }
+        .pokemon-details-basestat-article {
+          padding: 0;
+        }
+      }
+    }
+  }
+  footer {
+    margin-top: 10px;
+  }
+  pokemon-list > pokemon-item {
+    flex-basis: 45%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  // For Desktop
+  header {
+    height: 180px;
+    &> .pokedex-title {
+      height: 100px;
+    }
+  }
+  pokemon-list {
+    max-width: 1400px;
+  }
+  pokemon-details {
+    height: 525px;
+    max-width: 1000px;
+    display: grid;
+    grid-template: 100px 1fr / 2fr 1fr 1fr;
+    padding: 20px;
+    & > {
+      header {
+        height: 100px;
+        margin: 0 auto;
+        grid-area: 1 / 2 / 2 / 4;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 100px;
+        .pokeball-png {
+          right: -32px;
+          bottom: -25px;
+          opacity: 30%;
+        }
+      }
+      .pokemon-img {
+        margin: 0 auto;
+        grid-area: 1 / 1 / 3 / 2;
+        max-width: 400px;
+      }
+      .pokemon-info {
+        border-radius: 10px;
+        grid-area: 2 / 2 / 3 / 4;
+        margin: 0;
+        padding: 20px;
+        & > {
+          article {
+            margin: 20px 20px;
+            padding: 0px;
+          }
+        }
+      }
+    }
+  }
+  footer > p {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,68 @@
+pokemon-list {
+  margin: 20px;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  & > div {
+    flex-basis: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    & > {
+      .pokemon-list-btn {
+        min-width: 35px;
+        max-width: 70px;
+        height: 30px;
+        flex-basis: 10%;
+        border-radius: 10px;
+        border: none;
+        &:hover {
+          cursor: pointer;
+        }
+        .play-rotate {
+          transform: rotate(180deg);
+        }
+      }
+      
+    }
+  }
+}
+
+pokemon-item {
+  width: 300px;
+  height: 155px;
+  padding: 15px 10px 15px 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  opacity: 100%;
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    opacity: 80%;
+  }
+  h2{
+    font-size: 20px;
+  }
+  .pokeball-png {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    transform: rotate(20deg);
+    opacity:30%;
+  }
+  .pokemon-image {
+    max-width: 125px;
+    z-index: 1;
+  }
+  .pokemon-info-text {
+    z-index: 1;
+  }
+}
