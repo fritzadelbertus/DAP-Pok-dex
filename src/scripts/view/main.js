@@ -4,7 +4,7 @@ import '../component/pokemon-details';
 import DataSource from '../data/datasource';
 import localData from '../data/localdata';
 
-function main() {
+const main = () => {
   const loadInitialData = async () => {
     const data = await DataSource.getAllPokemon();
     localData.countPokemon = data.count;
@@ -37,6 +37,6 @@ function main() {
   renderPokemons();
   $('.pokedex-title').on('click', () => { renderPokemons(); });
   $('.home-btn').on('click', () => { renderPokemons(); });
-}
+};
 
 export default main;
