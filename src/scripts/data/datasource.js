@@ -7,7 +7,7 @@
 class DataSource {
   static async searchSpecificPokemon(pokemonName) {
     try {
-      const pokeName = pokemonName.toLowerCase();
+      const pokeName = pokemonName.toLowerCase().replace(' ', '-');
       const baseUrl = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
       const responseJson = await fetch(baseUrl).then((response) => response.json());
       if (responseJson) return Promise.resolve(responseJson);
