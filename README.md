@@ -24,8 +24,8 @@ This is a Pokédex WebApp to search information of Pokémons from the [PokéAPI]
 
 ### Links
 
-- Submission URL: [Github Repo](https://github.com/fritzadelbertus/DAP-Pokedex)
-- Live Site URL: [Github Pages](https://fritzadelbertus.github.io/DAP-Pokedex/)
+- Submission URL: [Github Repo](https://github.com/fritzadelbertus/DAP_Pokedex)
+- Live Site URL: [Github Pages](https://fritzadelbertus.github.io/DAP_Pokedex/)
 
 ## My process
 
